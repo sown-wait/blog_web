@@ -2,7 +2,7 @@ title: "我的个人博客"
 description: "记录技术、阅读与生活的个人空间"
 author: "你的名字"
 baseurl: ""
-url: "https://你的用户名.github.io"
+url: ""
 lang: "zh-CN"
 timezone: Asia/Shanghai
 markdown: kramdown
