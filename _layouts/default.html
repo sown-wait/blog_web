@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% feed_meta %}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap nav">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav aria-label="主导航">
+          <a href="{{ '/' | relative_url }}">首页</a>
+          <a href="{{ '/about/' | relative_url }}">关于</a>
+          <a href="{{ '/feed.xml' | relative_url }}">订阅</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">{{ content }}</main>
+    <footer class="site-footer wrap">© {{ 'now' | date: '%Y' }} {{ site.author }} · Powered by Jekyll</footer>
+  </body>
+</html>
