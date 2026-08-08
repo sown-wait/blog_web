@@ -1,18 +1,15 @@
----
-layout: default
-title: 首页
----
-<section class="intro">
-  <p class="eyebrow">WELCOME</p>
-  <h1>你好，我是{{ site.author }}。</h1>
-  <p class="lede">这里记录我在技术、阅读与生活中的观察和思考。</p>
-</section>
-<section aria-labelledby="latest-title">
-  <div class="section-heading"><h2 id="latest-title">最新文章</h2><span>{{ site.posts | size }} 篇文章</span></div>
-  {% for post in site.posts %}
-  <article class="post-row">
-    <div><p class="post-date">{{ post.date | date: '%Y年%m月%d日' }}</p><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>{% if post.description %}<p>{{ post.description }}</p>{% endif %}</div>
-    <a class="read-more" href="{{ post.url | relative_url }}" aria-label="阅读 {{ post.title }}">阅读 →</a>
-  </article>
-  {% else %}<p class="empty">还没有文章，去 _posts 目录写下第一篇吧。</p>{% endfor %}
-</section>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#667eea" />
+    <meta name="description" content="雪&snow 的个人博客，记录前端、设计与生活。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>雪&snow · 个人博客</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

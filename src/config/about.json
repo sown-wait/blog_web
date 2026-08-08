@@ -1,0 +1,20 @@
+{
+  "name": "雪&snow",
+  "role": "前端开发者 / 独立创作者",
+  "bio": "喜欢把复杂的事情做得清晰，也喜欢在代码之外观察世界。这里记录前端实践、设计思考，以及那些值得慢慢写下来的日常。",
+  "location": "中国 · 杭州",
+  "email": "hello@example.com",
+  "skills": ["Vue 3", "JavaScript", "TypeScript", "CSS", "Vite", "静态站点"],
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/",
+      "icon": "github"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:hello@example.com",
+      "icon": "mail"
+    }
+  ]
+}

@@ -1,37 +1,37 @@
-# 我的个人博客
+# 雪&snow
 
-这是一个使用 Jekyll 和 GitHub Pages 构建的静态博客。
+基于 Vue 3、Vite 和 Markdown 的纯静态个人博客。
 
-## 写新文章
+## 开发
 
-在 `_posts` 中新建 `YYYY-MM-DD-文章标题.md`，并在开头写入：
+```bash
+npm install
+npm run dev
+```
 
-```yaml
+## 发布
+
+```bash
+npm run build
+npm run preview
+```
+
+构建产物位于 `dist/`，可以直接部署到 CDN 或腾讯云 EdgeOne Pages。
+
+## 写文章
+
+在 `src/posts/` 下新建 Markdown 文件。文件名会成为文章 ID，例如 `vue-static-site.md` 对应 `/post/vue-static-site`。
+
+```md
 ---
-layout: post
 title: 文章标题
-date: 2026-08-06 10:00:00 +0800
-tags: [技术]
-description: 一句话摘要
+date: 2026-08-08
+category: 前端
+tags: [Vue, Vite]
+excerpt: 首页展示的文章摘要。
 ---
+
+这里是正文。
 ```
 
-## 发布到 GitHub Pages
-
-1. 创建名为 `你的用户名.github.io` 的 GitHub 仓库。
-2. 修改 `_config.yml` 中的标题、作者和 `url`。
-3. 推送 `main` 分支；`.github/workflows/pages.yml` 会自动构建和部署网站。
-
-## 发布到 EdgeOne Pages
-
-`main` 分支推送后，`.github/workflows/edgeone.yml` 会自动构建网站，并将生成的静态文件发布到 `edgeone-pages` 分支。
-
-在 EdgeOne 中选择 `edgeone-pages` 分支，并设置：
-
-```text
-框架预设：Other
-根目录：/
-安装命令：留空
-编译命令：留空
-输出目录：/
-```
+EdgeOne Pages 需要将未匹配的路由回退到 `/index.html`，以支持 Vue Router 的 `createWebHistory` 深层链接。
