@@ -19,11 +19,7 @@ import { RouterLink, RouterView } from 'vue-router'
     </header>
 
     <main class="site-main">
-      <RouterView v-slot="{ Component }">
-        <Transition name="page" mode="out-in">
-          <component :is="Component" />
-        </Transition>
-      </RouterView>
+      <RouterView />
     </main>
 
     <footer class="site-footer">
