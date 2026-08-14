@@ -1,10 +1,28 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import CategoryFilter from '@/components/CategoryFilter.vue'
 import PostCard from '@/components/PostCard.vue'
 import { categories, posts } from '@/utils/posts'
 
 const activeCategory = ref('全部')
+const currentDate = ref(new Date())
+
+let dateTimer
+
+const heroDateLabel = computed(() => ({
+  day: currentDate.value.getDate().toString().padStart(2, '0'),
+  month: currentDate.value.toLocaleString('en-US', { month: 'short' }).toUpperCase()
+}))
+
+onMounted(() => {
+  dateTimer = window.setInterval(() => {
+    currentDate.value = new Date()
+  }, 60 * 1000)
+})
+
+onUnmounted(() => {
+  window.clearInterval(dateTimer)
+})
 
 const visiblePosts = computed(() => {
   if (activeCategory.value === '全部') {
@@ -27,7 +45,7 @@ const visiblePosts = computed(() => {
       <div class="hero-art" aria-hidden="true">
         <div class="snowflake snowflake-large">✳</div>
         <div class="snowflake snowflake-small">✦</div>
-        <div class="art-label">08<br /><span>AUG</span></div>
+        <div class="art-label">{{ heroDateLabel.day }}<br /><span>{{ heroDateLabel.month }}</span></div>
       </div>
     </div>
   </section>
