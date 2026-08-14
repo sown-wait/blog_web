@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <nav class="main-nav" aria-label="主导航">
           <RouterLink to="/">首页</RouterLink>
           <RouterLink to="/about">关于我</RouterLink>
-          <RouterLink to="https://apicodexclude.snowing.top/">中转站</RouterLink>
+          <a href="https://apicodexclude.snowing.top/" target="_blank">中转站</a>
         </nav>
       </div>
     </header>
